@@ -1,0 +1,108 @@
+.header{
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #EEEFF2;
+}
+.header__container {
+    display: grid;
+    grid-template-areas: 
+    "logo control"    
+    "search search";
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.header__link-logo {
+    grid-area: logo;
+}
+.header__search {
+    grid-area: search;
+    position: relative;
+    width: 100%;
+    height: 38px;
+}
+.header__input {
+    width: 100%;
+    height: 100%;
+    background-color: #EEEFF2;
+    border: none;
+    border-radius: 32px;
+    padding: 0 40px 0 24px;
+    outline: none;
+    outline-offset: -1px;
+}
+.header__input::placeholder {
+    color: #969EAE;
+}
+.header__input:focus-visible, .header__input:hover {
+    outline: 1px solid #DFE3EB;
+}
+.header__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 24px;
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    outline-offset: 4px;
+    outline: 1px solid transparent;
+}
+.header__btn:hover {
+    color: #780096;
+}
+.header__btn:focus-visible {
+    color: #780096;
+    outline-color: #780096;
+}
+.header__control {
+    grid-area: control;
+    justify-self: end;
+    display: flex;
+    gap: 16px;
+}
+.header__link {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: end;
+    gap: 4px;
+    border-radius: 3px;
+    outline: 1px solid transparent;
+    outline-offset: 4px;
+}
+.header__link:hover {
+    color: #780096;
+}
+.header__link:focus-visible {
+    outline-color: #780096;
+    color: #780096;
+}
+.header__link-text {
+    display: none;
+}
+@media (min-width: 580px) {
+.header__link-text {
+    display: block;
+}
+.header__link {
+    flex-direction: row;
+}
+}
+@media (min-width: 820px) {
+.header__container { 
+    grid-template-areas: 
+    "logo search control";
+    grid-template-columns: 94px 1fr auto;
+    align-items: center;
+}
+.header__search {
+    max-width: 408px;
+    justify-self: center;
+}
+}
+@media (min-width: 1440px) {
+    .header__search {
+        width: 514px;
+        margin: 0 auto;
+    }
+}

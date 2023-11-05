@@ -1,0 +1,77 @@
+.card {
+    display: grid;
+    row-gap: 12px;
+    align-items: center;
+    grid-template-areas:
+    "image"
+    "description"
+    "add_button";
+    position: relative;
+}
+.card__link {
+    grid-area: image;
+}
+.card__image {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 16px; 
+}
+.card__description {
+    grid-area: description;
+    display: flex;
+    justify-content: space-between;
+    row-gap: 4px;
+    flex-wrap: wrap;
+}
+.card__title {
+    font-size: 12px;
+    font-weight: 400;
+}
+.card__price {
+    font-size: 16px;
+    font-weight: 400;
+}
+.card__btn {
+    grid-area: add_button;
+    height: 38px;
+    padding: 12px 24px;
+    border-radius: 32px;
+    color: #780096;
+    border: 1px solid #780096;
+    font-weight: 400;
+}
+.card__favourite {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+@media (min-width: 580px) {
+    .card {
+        grid-template-areas:
+        "image image"
+        "description description"
+        "add_button add_button";
+        row-gap: 0px;
+    }
+    .card__description {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-bottom: 20px;
+    }
+    .card__title {
+        font-size: 16px;
+        margin-top: 19px;
+
+    }
+    .card__price {
+        font-size: 20px;
+        margin-top: 16px;
+    }
+}
+@media (min-width: 820px) {
+    .card__description {
+        align-items: center;
+        margin-bottom: 18px;
+    }
+}
